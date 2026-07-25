@@ -1,7 +1,0 @@
-User-agent: *
-
-Allow: /
-
-
-Sitemap:
-https://osp-bialogrady.github.io/sitemap.xml
