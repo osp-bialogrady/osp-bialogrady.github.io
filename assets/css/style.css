@@ -11,24 +11,25 @@
 
 :root {
 
-    --primary: #d71920;
-    --primary-dark: #a80f15;
+    --primary: #c8161d;
+    --primary-dark: #9c0f14;
 
-    --black: #111418;  /* Zmienione na elegancki, urzędowy antracyt */
-    --dark: #191d24;   /* Podbita jasność tła sekcji */
-    --dark-light: #222730;
+    --black: #ffffff;  /* Jasne, urzędowe tło strony */
+    --dark: #f5f6f8;   /* Jasne tło sekcji na przemian */
+    --dark-light: #eef0f3;
 
-    --white: #ffffff;
-    --gray: #c0c0c0;   /* Rozjaśniony szary dla lepszej czytelności */
+    --white: #14181f;
+    --gray: #55606e;   /* Ciemnoszary tekst drugorzędny na jasnym tle */
+    --ink-mute: #838d99; /* Wyciszony szary do drobnych podpisów */
 
     --border:
-    rgba(255,255,255,0.1);
+    rgba(20,24,31,0.1);
 
     --glass:
-    rgba(255,255,255,0.06);
+    rgba(20,24,31,0.035);
 
     --shadow:
-    0 20px 50px rgba(0,0,0,.5);
+    0 20px 45px rgba(20,24,31,.08);
 
 }
 
@@ -140,7 +141,7 @@ h2 {
 p {
 
     color:
-    #dedede; /* Znacznie jaśniejszy tekst, dobrze odbijający się od grafitu */
+    var(--gray); /* Ciemnoszary tekst dobrze czytelny na jasnym tle */
 
     line-height:
     1.8;
@@ -331,7 +332,7 @@ p {
 
 
     background:
-    rgba(17,20,24,.9); /* Dopasowane do nowego antracytu z lekkim rozmyciem */
+    rgba(255,255,255,.85); /* Jasna, przeszklona belka nawigacji po przewinięciu */
 
 
     backdrop-filter:
@@ -486,6 +487,22 @@ p {
     font-size:
     28px;
 
+    color: #fff; /* Nad hero (wideo) menu jest białe */
+
+}
+
+
+/* Po przewinięciu belka jest jasna, więc tekst i ikony muszą być ciemne */
+#navbar.scrolled .nav-links a,
+#navbar.scrolled .mobile-menu {
+
+    color: var(--white);
+
+}
+
+.support-button {
+
+    color: #fff; /* Przycisk zawsze na czerwonym tle, więc tekst zostaje biały */
 
 }
 
@@ -653,8 +670,8 @@ p {
 
     max-width:
     950px;
-
-
+	
+	color: #fff;
 }
 
 
@@ -989,8 +1006,8 @@ position: relative;
     background:
     linear-gradient(
     145deg,
-    #1c212a,
-    #13171d
+    #ffffff,
+    #f5f6f8
     );
 
 
@@ -1098,7 +1115,7 @@ position: relative;
 
 
     background:
-    rgba(255,255,255,.04);
+    rgba(20,24,31,.035);
 
 
     padding:
@@ -1139,7 +1156,7 @@ position: relative;
 
 
     color:
-    #ccc;
+    var(--ink-mute);
 
 
 }
@@ -1162,7 +1179,7 @@ position: relative;
 
 
     background:
-    #13171d;
+    var(--dark);
 
 
 }
@@ -1233,8 +1250,8 @@ position: relative;
     background:
     linear-gradient(
     145deg,
-    #1c212a,
-    #141820
+    #ffffff,
+    #f7f8fa
     );
 
 
@@ -1274,7 +1291,7 @@ position: relative;
 
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,.5);
+    0 20px 45px rgba(20,24,31,.12);
 
 
 }
@@ -1359,7 +1376,7 @@ position: relative;
 
 
     color:
-    #ffcc00;
+    #b8860a;
 
 
 }
@@ -1370,7 +1387,7 @@ position: relative;
 
 
     color:
-    #37ff88;
+    #15803d;
 
 
 }
@@ -1381,7 +1398,7 @@ position: relative;
 
 
     color:
-    #45aaff;
+    #1d4ed8;
 
 
 }
@@ -1439,7 +1456,7 @@ position: relative;
 
 
     color:
-    white;
+    var(--white);
 
 
     font-weight:
@@ -1474,8 +1491,8 @@ position: relative;
     background:
     linear-gradient(
     180deg,
-    #13171d,
-    #191d24
+    var(--dark),
+    var(--dark-light)
     );
 
 
@@ -1508,7 +1525,7 @@ position: relative;
 
 
     background:
-    rgba(255,255,255,.04);
+    rgba(20,24,31,.035);
 
 
     border:
@@ -1609,11 +1626,11 @@ position: relative;
 
 
     background:
-    rgba(55,255,136,.15);
+    rgba(21,128,61,.12);
 
 
     color:
-    #37ff88;
+    #15803d;
 
 
     padding:
@@ -1639,7 +1656,7 @@ position: relative;
 
 .progress-container {
     margin: 35px 0 20px;
-    background: #2a303c; /* Szare tło całego paska */
+    background: #e6e8ec; /* Jasnoszare tło całego paska */
     border-radius: 50px;
     overflow: hidden;
 }
@@ -1735,7 +1752,7 @@ position: relative;
 
 
     color:
-    #aaa;
+    var(--ink-mute);
 
 
     font-size:
@@ -1752,7 +1769,7 @@ position: relative;
 
 
     color:
-    #37ff88;
+    #15803d;
 
 
     font-size:
@@ -1812,7 +1829,7 @@ position: relative;
 
 
     background:
-    #171c24;
+    #ffffff;
 
 
     border-radius:
@@ -1821,6 +1838,9 @@ position: relative;
 
     border:
     1px solid var(--border);
+
+    box-shadow:
+    0 10px 30px rgba(20,24,31,.05);
 
 
     transition:
@@ -1892,7 +1912,7 @@ position: relative;
 
 
     background:
-    #111418;
+    var(--dark);
 
 
 }
@@ -1970,7 +1990,7 @@ position: relative;
 
 
     color:
-    #ccc;
+    var(--ink-mute);
 
 
     font-size:
@@ -2059,7 +2079,7 @@ position: relative;
     max-width:
     800px;
 
-
+	 color: #fff;
 }
 
 
@@ -2274,13 +2294,16 @@ position: relative;
     background:
     linear-gradient(
     135deg,
-    #1c212a,
-    #13171d
+    #ffffff,
+    #f5f6f8
     );
 
 
     border:
     1px solid var(--border);
+
+    box-shadow:
+    var(--shadow);
 
 
 }
@@ -2327,6 +2350,13 @@ position: relative;
 }
 
 
+
+.support-content .btn.outline {
+
+    border-color: rgba(20,24,31,.2);
+    color: var(--white);
+
+}
 
 .support-image {
 
@@ -2375,7 +2405,7 @@ position: relative;
 
 
     background:
-    #13171d;
+    var(--dark);
 
 
 }
@@ -2444,7 +2474,7 @@ position: relative;
 
 
     background:
-    rgba(255,255,255,.04);
+    rgba(20,24,31,.035);
 
 
     border-radius:
@@ -2518,7 +2548,7 @@ footer {
 
 
     background:
-    #0c0e12;
+    var(--dark-light);
 
 
     border-top:
@@ -2611,7 +2641,7 @@ footer p {
 
 
     background:
-    rgba(255,255,255,.08);
+    rgba(20,24,31,.06);
 
 
     transition:
@@ -2627,6 +2657,9 @@ footer p {
 
     background:
     var(--primary);
+
+    color:
+    #fff;
 
 
     transform:
@@ -2645,7 +2678,7 @@ footer p {
 
 
     color:
-    #888;
+    #7a8290;
 
 
     font-size:
@@ -2980,7 +3013,7 @@ footer p {
 
 
     background:
-    #111418;
+    #eef0f3;
 
 
 }
