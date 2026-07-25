@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zbiórka 100 000 butelek | OSP Białogrądy</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body { background-color: #050505; color: #fff; overflow-x: hidden; }
+        
+        /* Ultra Animowane Tło */
+        .campaign-hero {
+            position: relative; padding: 220px 0 150px;
+            background: radial-gradient(circle at 50% 50%, #111827 0%, #000000 100%);
+            text-align: center; overflow: hidden;
+        }
+        
+        .animated-bg-shape {
+            position: absolute; border-radius: 50%; filter: blur(120px);
+            animation: floatShape 10s infinite alternate ease-in-out;
+            z-index: 0;
+        }
+        .shape-1 { width: 50vw; height: 50vw; background: rgba(22, 163, 74, 0.15); top: -20%; left: -10%; animation-delay: 0s; }
+        .shape-2 { width: 40vw; height: 40vw; background: rgba(34, 197, 94, 0.1); bottom: -20%; right: -10%; animation-delay: -5s; }
+
+        @keyframes floatShape {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.1); }
+        }
+
+        .hero-content { position: relative; z-index: 2; perspective: 1000px; }
+
+        .glitch-title {
+            font-size: clamp(50px, 8vw, 110px); font-weight: 900;
+            background: linear-gradient(to right, #ffffff, #4ade80);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 20px; line-height: 1; text-shadow: 0 0 50px rgba(74, 222, 128, 0.3);
+            transform: translateZ(50px);
+        }
+
+        /* Progres Bar 3.0 */
+        .cyber-progress-container {
+            width: 100%; max-width: 700px; margin: 50px auto 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 100px; padding: 5px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .cyber-progress-bar {
+            height: 20px; width: 0%; /* Zaczynamy od 0 dla animacji w JS */
+            background: linear-gradient(90deg, #16a34a, #4ade80, #16a34a);
+            background-size: 200% auto;
+            border-radius: 100px;
+            box-shadow: 0 0 20px #4ade80, inset 0 0 10px rgba(255,255,255,0.5);
+            animation: shineBar 2s linear infinite;
+            transition: width 2.5s cubic-bezier(0.2, 0.8, 0.2, 1); /* Płynny wjazd */
+        }
+
+        @keyframes shineBar { to { background-position: 200% center; } }
+
+        /* Karty 3D Hover (Vanilla JS załatwi resztę) */
+        .cards-3d-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px; padding: 100px 0; position: relative; z-index: 2;
+        }
+
+        .card-3d {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px; padding: 50px 30px;
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            position: relative; overflow: hidden;
+        }
+
+        .card-3d-content { transform: translateZ(40px); /* Wyciągnięcie tekstu do przodu */ }
+        
+        .card-3d i {
+            font-size: 60px; color: #4ade80; margin-bottom: 25px;
+            filter: drop-shadow(0 0 15px rgba(74, 222, 128, 0.5));
+        }
+        
+        /* Reveal on scroll */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+<nav id="navbar" class="scrolled" style="background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);">
+    <div class="container nav-container">
+        <div class="logo">
+            <a href="../index.html" style="display: flex; align-items: center; gap: 10px;">
+                <img src="../assets/img/logo.png" alt="Logo" style="height: 80px;">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html#about">O nas</a></li>
+            <li><a href="elektroodpady.html">Elektroodpady</a></li>
+            <li><a href="#" class="support-button" style="box-shadow: 0 0 15px rgba(22, 163, 74, 0.5);"><i class="fa-solid fa-heart"></i> Wesprzyj</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="campaign-hero">
+    <div class="animated-bg-shape shape-1"></div>
+    <div class="animated-bg-shape shape-2"></div>
+    
+    <div class="container hero-content">
+        <div style="color: #4ade80; font-weight: bold; letter-spacing: 4px; margin-bottom: 20px;">CEL: NOWA MOTOPOMPA</div>
+        <div class="glitch-title">100 000 BUTELEK</div>
+        <p style="font-size: 24px; color: #9ca3af; max-width: 800px; margin: 0 auto;">Każdy plastik ma znaczenie. Twój mały gest to nasz wielki krok do skuteczniejszego ratowania życia.</p>
+        
+        <div class="cyber-progress-container">
+            <div class="cyber-progress-bar" id="progressBar"></div>
+        </div>
+        <div style="font-size: 30px; font-weight: 900; margin-top: 20px;">
+            <span id="counter" style="color: #4ade80;">0</span> / 100 000
+        </div>
+    </div>
+</header>
+
+<section class="container reveal">
+    <div class="cards-3d-grid">
+        <div class="card-3d" data-tilt>
+            <div class="card-3d-content">
+                <i class="fa-solid fa-stopwatch"></i>
+                <h3 style="font-size: 26px; margin-bottom: 15px;">Czas to życie</h3>
+                <p style="color: #9ca3af;">Nowa motopompa = natychmiastowe ciśnienie wody. W pożarze ułamki sekund decydują o wszystkim.</p>
+            </div>
+        </div>
+        <div class="card-3d" data-tilt>
+            <div class="card-3d-content">
+                <i class="fa-solid fa-leaf"></i>
+                <h3 style="font-size: 26px; margin-bottom: 15px;">Czysty Biebrzański PN</h3>
+                <p style="color: #9ca3af;">Nasza otulina to skarb. Zbierając butelki, chronimy środowisko, z którego wszyscy korzystamy.</p>
+            </div>
+        </div>
+        <div class="card-3d" data-tilt>
+            <div class="card-3d-content">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3 style="font-size: 26px; margin-bottom: 15px;">Bezpieczeństwo</h3>
+                <p style="color: #9ca3af;">Lepszy sprzęt to pewność, że będziemy mogli ratować Twój dobytek z maksymalną siłą.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skrypty Fifarafa -->
+<script>
+    // 1. Animacja paska postępu po załadowaniu
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            document.getElementById('progressBar').style.width = '5.12%';
+        }, 500);
+
+        // Licznik
+        const counter = document.getElementById('counter');
+        const target = 512;
+        let count = 0;
+        const speed = 2000 / target; // animacja trwa ok 2 sekundy
+
+        const updateCount = () => {
+            if(count < target) {
+                count += Math.ceil(target / 100);
+                if(count > target) count = target;
+                counter.innerText = count;
+                setTimeout(updateCount, speed);
+            }
+        };
+        setTimeout(updateCount, 500);
+    });
+
+    // 2. Animacja pojawiania się przy scrollowaniu
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+        for(let i = 0; i < reveals.length; i++){
+            let windowHeight = window.innerHeight;
+            let elementTop = reveals[i].getBoundingClientRect().top;
+            if(elementTop < windowHeight - 100) {
+                reveals[i].classList.add('active');
+            }
+        }
+    });
+
+    // 3. Prosty efekt 3D Tilt dla kart
+    const cards = document.querySelectorAll('.card-3d');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            let rect = card.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+            let centerX = rect.width / 2;
+            let centerY = rect.height / 2;
+            let rotateX = ((y - centerY) / centerY) * -10; // max 10 deg
+            let rotateY = ((x - centerX) / centerX) * 10;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+    });
+</script>
+</body>
+</html>
