@@ -2093,7 +2093,7 @@ position: relative;
 
     margin-bottom:
     25px;
-
+color: #d8dde3;
 
 }
 
@@ -2102,8 +2102,8 @@ position: relative;
 .story-content strong {
 
 
-    color:
-    white;
+   color: var(--primary);
+
 
 
 }
