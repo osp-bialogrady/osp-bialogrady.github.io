@@ -3140,3 +3140,19 @@ img, video {
 	display:none;
 	}
 }
+
+@media (max-width: 750px) {
+    
+    #navbar.scrolled .nav-links a
+     {
+        color: #ffffff;
+    }
+}
+
+@media (max-width: 750px) {
+    
+   
+    #navbar.scrolled .mobile-menu {
+        color: red;
+    }
+}
