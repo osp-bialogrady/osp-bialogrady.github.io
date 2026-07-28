@@ -7,7 +7,33 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
+    <link rel="canonical" href="https://osp-bialogrady.github.io/butelki.html">
+	
+	<meta property="og:type" content="website">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="canonical" href="https://osp-bialogrady.github.io/elektroodpady.html">
+<meta property="og:title"
+content="Zbiórka Elektroodpadów | OSP Białogrądy">
+
+<meta property="og:description"
+content="Masz niepotrzebny sprzęt elektryczny? Skontaktuj się z OSP Białogrądy, a odbierzemy go bezpłatnie.">
+
+<meta property="og:image"
+content="https://osp-bialogrady.github.io/assets/img/historia.jpg">
+
+<meta property="og:url"
+content="https://osp-bialogrady.github.io/elektroodpady.html">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title"
+content="Zbiórka Elektroodpadów | OSP Białogrądy">
+
+<meta name="twitter:description"
+content="Przekaż elektroodpady i wesprzyj działalność OSP Białogrądy.">
+
+<meta name="twitter:image"
+content="https://osp-bialogrady.github.io/assets/img/historia.jpg">
     <style>
         :root {
             --brand-green: #15803d;
@@ -87,7 +113,8 @@
         .alert-box { background: #fff; border-left: 8px solid var(--brand-green); padding: 30px; border-radius: 20px; box-shadow: var(--shadow-lg); display: flex; gap: 25px; align-items: center; margin-bottom: 60px; }
         .alert-box i { font-size: 40px; color: var(--brand-green); flex-shrink: 0; }
         .alert-box h4 { font-size: 18px; font-weight: 800; margin-bottom: 5px; color: var(--brand-dark); }
-        .alert-box p { font-size: 14px; color: var(--text-muted); margin: 0; font-weight: 500; }
+        .alert-box p { font-size: 14px; color: var(--text-muted); margin: 0 0 10px 0; font-weight: 500; }
+        .alert-box p:last-child { margin-bottom: 0; }
         .alert-box p strong { color: var(--brand-dark); }
 
         /* SIEPOMAGA SEKCJA */
@@ -98,6 +125,13 @@
         .siepomaga-btn:hover { background: #e0484d; transform: translateY(-2px); }
 
         footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--text-muted); font-size: 13px; font-weight: 600; }
+
+        /* BANNER COOKIES */
+        #simple-cookie-banner { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: min(90%, 600px); background: var(--brand-dark); color: #fff; padding: 15px 25px; border-radius: 16px; box-shadow: var(--shadow-lg); display: flex; justify-content: space-between; align-items: center; gap: 15px; z-index: 2000; font-size: 13px; font-weight: 500; }
+        #simple-cookie-banner p { margin: 0; color: #cbd5e1; }
+        #simple-cookie-banner a { color: #4ade80; text-decoration: underline; }
+        #accept-cookies { background: var(--brand-green); color: #fff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: 0.2s; }
+        #accept-cookies:hover { background: var(--brand-green-hover); }
 
         /* SKROL ANIMACJE */
         .slide-up { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
@@ -114,8 +148,24 @@
             .weight-calculator { padding: 30px 20px; }
             .result-display { flex-direction: column; text-align: center; }
             .alert-box { flex-direction: column; text-align: center; gap: 15px; }
+            #simple-cookie-banner { flex-direction: column; text-align: center; }
         }
     </style>
+	
+	<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Zbiórka Elektroodpadów",
+  "url":"https://osp-bialogrady.github.io/elektroodpady.html",
+  "description":"Akcja odbioru elektroodpadów prowadzona przez OSP Białogrądy.",
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"OSP Białogrądy",
+    "url":"https://osp-bialogrady.github.io/"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -123,7 +173,7 @@
 <nav id="navbar">
     <div class="container nav-container">
         <a href="/" class="logo">
-            <img src="assets/img/logo.png" alt="Logo OSP Białogrądy" style="height: 60px; width: auto;"> <!-- Lekko zmniejszone na telefon -->
+            <img src="assets/img/logo.png" alt="Logo OSP Białogrądy" style="height: 60px; width: auto;">
         </a>
         <button class="menu-toggle" id="mobile-menu-btn">
             <i class="fa-solid fa-bars"></i>
@@ -208,7 +258,7 @@
             </div>
             <div>
                 <button onclick="resetWeight()" style="background: rgba(255,255,255,0.1); border: none; color: #cbd5e1; padding: 10px 20px; border-radius: 12px; cursor: pointer; font-weight: 700; font-size: 14px;">
-                    <i class="fa-solid fa-rotate-left">⁠</i> Wyczyść wynik
+                    <i class="fa-solid fa-rotate-left"></i> Wyczyść wynik
                 </button>
             </div>
         </div>
@@ -253,8 +303,7 @@
         <div>
             <h4>Ważna informacja o kompletności</h4>
             <p>Sprzęt nie musi być sprawny, ale powinien być <strong>kompletny</strong> (niepozbawiony głównych części, takich jak silnik czy sprężarka w lodówce).</p>
-			
-		<p>Za każdą oddaną tonę elektrośmieci otrzymujemy środki finansowe na doposażenie naszej jednostki ratowniczo-gaśniczej!</p>
+            <p>Za każdą oddaną tonę elektrośmieci otrzymujemy środki finansowe na doposażenie naszej jednostki ratowniczo-gaśniczej!</p>
         </div>
     </div>
 
@@ -270,9 +319,15 @@
 
 <footer>
     <div class="container">
-        <p>&copy; Ochotnicza Straż Pożarna w Białogrądach. Wszelkie prawa zastrzeżone.</p>
+        <a href="polityka.html" style="color: inherit; text-decoration: underline;">Polityka prywatności</a>
+        <p>&copy; 2026 Ochotnicza Straż Pożarna w Białogrądach. Wszelkie prawa zastrzeżone.</p>
     </div>
 </footer>
+
+<div id="simple-cookie-banner" style="display: none;">
+    <p>Strona korzysta z plików cookies w celach technicznych. Więcej informacji znajdziesz w <a href="polityka.html" target="_blank">Polityce Prywatności</a>.</p>
+    <button id="accept-cookies">Rozumiem</button>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -326,6 +381,21 @@
         currentWeight = 0;
         document.getElementById('weightTotal').textContent = currentWeight;
     };
+
+    // LOGIKA COOKIES
+    document.addEventListener("DOMContentLoaded", function() {
+        const banner = document.getElementById("simple-cookie-banner");
+        const acceptBtn = document.getElementById("accept-cookies");
+
+        if (!localStorage.getItem("osp_cookie_accepted")) {
+            banner.style.display = "flex";
+        }
+
+        acceptBtn.addEventListener("click", function() {
+            localStorage.setItem("osp_cookie_accepted", "true");
+            banner.style.display = "none";
+        });
+    });
 </script>
 </body>
 </html>
