@@ -5,10 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zbiórka Kaucyjna na Motopompę | OSP Białogrądy</title>
     
+    <!-- Favicon / Ikona strony w karcie przeglądarki -->
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    
+	<meta property="og:type" content="website">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="canonical" href="https://osp-bialogrady.github.io/butelki.html">
+<meta property="og:title"
+content="Zbiórka 100 000 butelek | OSP Białogrądy">
+
+<meta property="og:description"
+content="Oddaj butelki i puszki kaucyjne, aby pomóc OSP Białogrądy w zakupie nowej motopompy pożarniczej.">
+
+<meta property="og:image"
+content="https://osp-bialogrady.github.io/assets/img/motopompa-og.jpg">
+
+<meta property="og:url"
+content="https://osp-bialogrady.github.io/butelki.html">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title"
+content="Zbiórka 100 000 butelek | OSP Białogrądy">
+
+<meta name="twitter:description"
+content="Pomóż nam zebrać środki na nową motopompę, przekazując opakowania kaucyjne.">
+
+<meta name="twitter:image"
+content="https://osp-bialogrady.github.io/assets/img/motopompa-og.jpg">
+
     <!-- Fonty i Ikony -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
+    <link rel="canonical" href="https://osp-bialogrady.github.io/butelki.html">
     <style>
         :root {
             --brand-red: #dc2626;
@@ -34,7 +63,6 @@
         .nav-container { display: flex; justify-content: space-between; align-items: center; position: relative; }
         .logo { font-size: 20px; font-weight: 900; color: var(--brand-navy); text-decoration: none; display: flex; align-items: center; gap: 10px; letter-spacing: -0.5px; }
         
-        /* Dodano style dla hamburger menu */
         .menu-toggle { display: none; background: none; border: none; font-size: 26px; color: var(--brand-navy); cursor: pointer; transition: 0.2s; }
         .menu-toggle:hover { color: var(--brand-red); }
         
@@ -119,16 +147,20 @@
 
         /* FOOTER */
         footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--text-muted); font-size: 13px; background: #ffffff; }
-        
-        /* ------------------------------------
-           MEDIA QUERIES (RESPONSYWNOŚĆ) 
-           ------------------------------------ */
+        .footer-content { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+
+        /* BANNER COOKIES */
+        #simple-cookie-banner { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: min(90%, 500px); background: var(--brand-navy); color: #ffffff; padding: 16px 20px; border-radius: 12px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 2000; font-size: 14px; text-align: center; }
+        #simple-cookie-banner a { color: #fca5a5; text-decoration: underline; }
+        #simple-cookie-banner button { background: var(--brand-red); color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+        #simple-cookie-banner button:hover { background: var(--brand-red-hover); }
+
+        /* MEDIA QUERIES */
         @media (max-width: 992px) {
             .hero-title { font-size: 42px; }
         }
 
         @media (max-width: 768px) {
-            /* Nawigacja Mobilna */
             .menu-toggle { display: block; }
             .nav-links {
                 position: absolute;
@@ -141,7 +173,6 @@
                 padding: 20px 0;
                 border-bottom: 1px solid var(--border);
                 box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-                /* Animacja chowania/pokazywania */
                 opacity: 0;
                 pointer-events: none;
                 transform: translateY(-10px);
@@ -156,7 +187,6 @@
             .nav-links a { display: block; padding: 10px; font-size: 16px; }
             .nav-links .btn { display: inline-flex; width: 90%; margin-top: 10px; }
             
-            /* Poprawki sekcji pod smartfony */
             .hero { padding: 100px 0 40px; }
             .alert-banner { flex-direction: column; text-align: center; gap: 12px; padding: 15px; }
             .hero-actions .btn, .pickup-btns .btn { width: 100%; }
@@ -167,6 +197,21 @@
             .pickup-box { padding: 30px 20px; }
         }
     </style>
+	<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Zbiórka 100 000 butelek",
+  "url":"https://osp-bialogrady.github.io/butelki.html",
+  "description":"Zbiórka butelek i puszek kaucyjnych prowadzona przez OSP Białogrądy na zakup nowej motopompy pożarniczej.",
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"OSP Białogrądy",
+    "url":"https://osp-bialogrady.github.io/"
+  }
+}
+</script>
+	
 </head>
 <body>
 
@@ -174,9 +219,8 @@
 <nav id="navbar">
     <div class="container nav-container">
         <a href="/" class="logo">
-            <img src="assets/img/logo.png" alt="Logo OSP Białogrądy" style="height: 60px; width: auto;"> <!-- Lekko zmniejszone na telefon -->
+            <img src="assets/img/logo.png" alt="Logo OSP Białogrądy" style="height: 60px; width: auto;">
         </a>
-        <!-- Przycisk menu mobilnego -->
         <button class="menu-toggle" id="mobile-menu-btn" aria-label="Otwórz menu">
             <i class="fa-solid fa-bars"></i>
         </button>
@@ -364,10 +408,17 @@
 </section>
 
 <footer>
-    <div class="container">
-        <p>&copy; Ochotnicza Straż Pożarna w Białogrądach. Wszelkie prawa zastrzeżone.</p>
+    <div class="container footer-content">
+        <a href="polityka.html" style="color: var(--brand-slate); font-weight: 700; text-decoration: underline;">Polityka prywatności</a>
+        <p>&copy; 2026 Ochotnicza Straż Pożarna w Białogrądach. Wszelkie prawa zastrzeżone.</p>
     </div>
 </footer>
+
+<!-- BANNER COOKIES -->
+<div id="simple-cookie-banner" style="display: none;">
+    <p>Strona korzysta z plików cookies w celach technicznych. Więcej informacji znajdziesz w <a href="polityka.html" target="_blank">Polityce Prywatności</a>.</p>
+    <button id="accept-cookies">Rozumiem</button>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -376,11 +427,9 @@
         const navLinks = document.querySelector('.nav-links');
         const menuIcon = menuBtn.querySelector('i');
 
-        // Otwieranie/zamykanie po kliknięciu w hamburgera
         menuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             
-            // Zmiana ikonki (bars <-> xmark)
             if(navLinks.classList.contains('active')) {
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-xmark');
@@ -390,7 +439,6 @@
             }
         });
 
-        // Zamknięcie menu po kliknięciu w jakikolwiek link w nawigacji
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -430,7 +478,7 @@
         window.addBottles = function(amount) {
             let current = parseInt(bottleInput.value) || 0;
             bottleInput.value = current + amount;
-            calculateKaucja();
+            calculateKaucjon = calculateKaucja(); // just reference function
         };
 
         function calculateKaucja() {
@@ -443,8 +491,20 @@
             document.getElementById('cashVal').textContent = cash + ' zł';
             document.getElementById('percentVal').textContent = percent + '%';
         }
+
+        // --- OBSŁUGA COOKIES ---
+        const banner = document.getElementById("simple-cookie-banner");
+        const acceptBtn = document.getElementById("accept-cookies");
+
+        if (!localStorage.getItem("osp_cookie_accepted")) {
+            banner.style.display = "flex";
+        }
+
+        acceptBtn.addEventListener("click", function() {
+            localStorage.setItem("osp_cookie_accepted", "true");
+            banner.style.display = "none";
+        });
     });
 </script>
-
 </body>
 </html>
