@@ -25,7 +25,7 @@ i rozwijamy bezpieczeństwo lokalnej społeczności.
 content="OSP Białogrądy">
 <link rel="canonical" href="https://osp-bialogrady.github.io/">
 
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="manifest" href="manifest.webmanifest">
 <!-- FACEBOOK -->
 
 
@@ -73,9 +73,12 @@ content="https://osp-bialogrady.github.io/assets/img/sharelogo.png">
 
 <!-- Przyspieszenie ładowania zewnętrznych zasobów -->
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- SEO: Canonical URL (Zapobiega problemom z duplikatami stron w Google) -->
-<link rel="canonical" href="https://osp-bialogrady.github.io/">
+
 
 <!-- SEO: Instrukcja dla robotów Google -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -138,6 +141,7 @@ href="assets/img/logo.png">
 <!-- FontAwesome - Ikony -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+    <link rel="stylesheet" href="assets/css/quality-overrides.css">
 </head>
 
 
@@ -164,7 +168,7 @@ href="assets/img/logo.png">
 
 
 
-<ul class="nav-links">
+<ul class="nav-links" id="primary-navigation">
 
 
 <li>
@@ -218,11 +222,7 @@ Wesprzyj
 </ul>
 
 
-<div class="mobile-menu">
-
-<i class="fa-solid fa-bars"></i>
-
-</div>
+<button class="mobile-menu" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="primary-navigation"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
 
 
 </div>
